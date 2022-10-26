@@ -6,7 +6,6 @@ export const ContactsList = ({ contacts, onDeleteContact }) => {
   return (
     <ul className={css.contact__list}>
       {contacts.map(({ id, name, number }) => {
-        // console.log(id);
         return (
           <ContactElement
             id={id}

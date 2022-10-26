@@ -16,13 +16,7 @@ class ContactForm extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-
-    // const contact = {};
-    // contact.id = nanoid();
-    // contact.name = this.state.name;
-    // contact.number = this.state.number;
     this.props.onSubmitProp({id: nanoid(), ...this.state});
-
     this.reset();
   };
 
@@ -70,24 +64,3 @@ export {ContactForm};
 ContactForm.propTypes = {
   onSubmitProp: PropTypes.func.isRequired,
 }
-  
-// export const FormPhonbook = ({ handleSubmit, handleChange, name }) => {
-//   return (
-//     <form className={css.formAddBook} onSubmit={handleSubmit}>
-//       <label className={css.formAddBook__label}>
-//         Name
-//         <input
-//           className={css.formAddBook__input}
-//           type="text"
-//           name="name"
-//           value={name}
-//           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-//           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-//           required
-//           onChange={handleChange}
-//         />
-//       </label>
-//       <button type="submit">Add contact</button>
-//     </form>
-//   );
-// };

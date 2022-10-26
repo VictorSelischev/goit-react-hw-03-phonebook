@@ -2,7 +2,6 @@ import css from './ContactElement.module.css';
 import PropTypes from 'prop-types';
 
 export const ContactElement = ({ id, name, number, onDeleteBtn }) => {
-  // console.log(id);
   return (
     <li className={css.contact__item}>
       <span className={css.contact__name}>

@@ -22,7 +22,6 @@ class App extends Component {
 
     if (localContacts !== undefined) {
       this.setState({ contacts: localContacts });
-      // console.log(localContacts);
     }
   }
 
@@ -54,8 +53,6 @@ class App extends Component {
   }
 
   addContact = data => {
-    // console.log(data);
-
     this.state.contacts.find(
       contact => data.name.toLowerCase() === contact.name.toLocaleLowerCase()
     )
@@ -66,14 +63,12 @@ class App extends Component {
   };
 
   deleteContact = contactId => {
-    // console.log('Delete: ', contactId);
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
   };
 
   handleChangeFilter = evt => {
-    // console.log(this.state.filter);
     this.setState({ filter: evt.target.value });
   };
 
@@ -87,11 +82,6 @@ class App extends Component {
 
   render() {
     const { filter } = this.state;
-    // const normalizedFilter = filter.toLowerCase();
-    // const visibleContacts = contacts.filter(contact =>
-    //   contact.name.toLowerCase().includes(normalizedFilter)
-    // );
-
     const visibleContacts = this.getVisibleContacts();
 
     return (
@@ -123,20 +113,3 @@ class App extends Component {
 }
 
 export { App };
-
-// export const App = () => {
-//   return (
-//     <div
-//       style={{
-//         height: '100vh',
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         fontSize: 40,
-//         color: '#010101'
-//       }}
-//     >
-//       React homework template
-//     </div>
-//   );
-// };
